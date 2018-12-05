@@ -298,7 +298,7 @@ void ToBinary(int n)
 
 
 //convert char to bits
-int CharToBit(long int n)
+int CharToBit()
 {
 	FILE* inp = fopen("input.txt", "rb");
 	output = fopen("bits.txt", "wb+");
@@ -436,11 +436,11 @@ void KeyShift64To48(unsigned int key[])
 }
 
 //start encryption
-void encrypt(long int n)
+void encrypt()
 {
 	FILE* in = fopen("bits.txt", "rb");
 
-	long int plain[n * 64];
+	long int plain[8 * 64];
 	int i = -1;
 	char ch;
 
@@ -478,8 +478,8 @@ int main()
 	output = fopen("cipher.txt", "wb+");
 	fclose(output);
 	RoundKeys();
-	CharToBit(8);
+	CharToBit();
 	//encrypt
-	encrypt(8);
+	encrypt();
 	return 0;
 }
