@@ -281,6 +281,21 @@ void finalPermutation(int position, int text)
 			break;
 	EN[i] = text;
 }
+//change to binary
+void ToBinary(int n)
+{
+        int k, m;
+        for (int i = 7; i >= 0; i--) 
+        {
+                m = 1 << i;
+                k = n & m;
+                if (k == 0)
+                        fprintf(output, "0");
+                else
+                        fprintf(output, "1");
+        }
+}
+
 
 
 //convert char to bits
@@ -300,21 +315,6 @@ int CharToBit(long int n)
 	}
 	fclose(output);
 	fclose(inp);
-}
-
-//change to binary
-void ToBinary(int n)
-{
-	int k, m;
-	for (int i = 7; i >= 0; i--) 
-	{
-		m = 1 << i;
-		k = n & m;
-		if (k == 0)
-			fprintf(output, "0");
-		else
-			fprintf(output, "1");
-	}
 }
 
 //decryption logic
