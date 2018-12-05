@@ -296,27 +296,6 @@ void ToBinary(int n)
         }
 }
 
-
-
-//convert char to bits
-int CharToBit()
-{
-	FILE* inp = fopen("input.txt", "rb");
-	output = fopen("bits.txt", "wb+");
-	char ch;
-	int i = 8 * 8;
-	while (i) 
-	{
-		ch = fgetc(inp);
-		if (ch == -1)
-			break;
-		i--;
-		ToBinary(ch);
-	}
-	fclose(output);
-	fclose(inp);
-}
-
 //decryption logic
 void Decryption(long int plain[])
 {
@@ -482,7 +461,6 @@ int main()
 
 
 	RoundKeys();
-	CharToBit();
 	decrypt();
 
 	return 0;
