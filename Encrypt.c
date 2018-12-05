@@ -303,7 +303,7 @@ int CharToBit()
 	FILE* inp = fopen("input.txt", "rb");
 	output = fopen("bits.txt", "wb+");
 	char ch;
-	int i = n * 8;
+	int i = 8 * 8;
 	while (i) 
 	{
 		ch = fgetc(inp);
@@ -450,7 +450,7 @@ void encrypt()
 		plain[++i] = ch - 48;
 	}
 
-	for (int i = 0; i < n; i++)
+	for (int i = 0; i < 8; i++)
 		Encryption(plain + 64 * i);
 
 	fclose(in);
