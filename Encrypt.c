@@ -471,19 +471,6 @@ void RoundKeys()
 	KeyShift64To48(key);
 	fclose(pt);
 }
-//find file size
-long int FilesSize()
-{
-	FILE* inp = fopen("input.txt", "rb");
-	long int size;
-	if (fseek(inp, 0L, SEEK_END))
-		perror("fseek() failed");
-	else // size will contain no. of chars in input file.
-		size = ftell(inp);
-	fclose(inp);
-
-	return size;
-}
 
 int main()
 {
