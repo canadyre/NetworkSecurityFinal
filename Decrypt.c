@@ -425,7 +425,7 @@ void decrypt()
 		plain[++i] = ch - 48;
 	}
 	
-	for (int i = 0; i < n; i++) 
+	for (int i = 0; i < 8; i++) 
 	{
 		Decryption(plain + i * 64);
 		bittochar();
